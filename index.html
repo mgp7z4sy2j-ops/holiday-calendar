@@ -1,0 +1,810 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Alvin &amp; Anthony 假期日程</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Big+Shoulders+Display:wght@600;700;800&display=swap">
+<style>
+:root {
+  --ground: #EDF0F2;
+  --surface: #FFFFFF;
+  --surface-2: #F5F8F9;
+  --ink: #12181C;
+  --ink-2: #46535B;
+  --ink-3: #7B8A92;
+  --line: #D2DADF;
+  --line-2: #B6C2C8;
+  --alvin: #12657F;
+  --alvin-bg: #E2EFF4;
+  --anthony: #A9450F;
+  --anthony-bg: #FAE7DA;
+  --flag: #9E2117;
+  --display: 'Big Shoulders Display', 'Archivo Narrow', 'Helvetica Neue', sans-serif;
+  --body: 'Archivo', 'Helvetica Neue', 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0E1316;
+    --surface: #171E22;
+    --surface-2: #1C262B;
+    --ink: #E7EDF0;
+    --ink-2: #A2B0B8;
+    --ink-3: #73828B;
+    --line: #293438;
+    --line-2: #3C4A52;
+    --alvin: #63C2DF;
+    --alvin-bg: #11313C;
+    --anthony: #F0955A;
+    --anthony-bg: #3A2313;
+    --flag: #F07A70;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0E1316;
+  --surface: #171E22;
+  --surface-2: #1C262B;
+  --ink: #E7EDF0;
+  --ink-2: #A2B0B8;
+  --ink-3: #73828B;
+  --line: #293438;
+  --line-2: #3C4A52;
+  --alvin: #63C2DF;
+  --alvin-bg: #11313C;
+  --anthony: #F0955A;
+  --anthony-bg: #3A2313;
+  --flag: #F07A70;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 15px;
+  line-height: 1.5;
+  padding: 0 20px;
+  padding-block: 28px 44px;
+  -webkit-font-smoothing: antialiased;
+}
+
+.wrap { max-width: 1040px; margin: 0 auto; }
+
+/* ---------- masthead ---------- */
+
+.masthead {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 12px 24px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--ink);
+}
+.masthead h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(38px, 8vw, 62px);
+  line-height: 0.86;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+.masthead h1 .amp { color: var(--ink-3); font-weight: 600; }
+.masthead .season {
+  font-size: 13px;
+  color: var(--ink-2);
+  text-align: right;
+  line-height: 1.35;
+  font-variant-numeric: tabular-nums;
+}
+.masthead .season b { color: var(--ink); font-weight: 600; }
+
+/* ---------- next up ---------- */
+
+.nextup {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 8px 16px;
+  margin-top: 18px;
+  padding: 14px 16px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--ink);
+}
+.nextup .lede {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 20px;
+  letter-spacing: 0.02em;
+  color: var(--ink-3);
+  flex: none;
+}
+.nextup .what { font-weight: 600; font-size: 16px; }
+.nextup .whom { font-weight: 700; }
+.nextup .whn {
+  font-size: 14px;
+  color: var(--ink-2);
+  font-variant-numeric: tabular-nums;
+  margin-left: auto;
+}
+
+/* ---------- controls ---------- */
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  align-items: center;
+  margin: 22px 0 0;
+}
+.seg { display: flex; border: 1px solid var(--line-2); background: var(--surface); }
+.seg button {
+  font: inherit;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--ink-2);
+  background: none;
+  border: 0;
+  border-right: 1px solid var(--line);
+  padding: 7px 15px;
+  cursor: pointer;
+}
+.seg button:last-child { border-right: 0; }
+.seg button:hover { color: var(--ink); }
+.seg button[aria-pressed="true"] { background: var(--ink); color: var(--ground); }
+.seg button:focus-visible { outline: 2px solid var(--alvin); outline-offset: 1px; }
+#who [data-who="alvin"][aria-pressed="true"] { background: var(--alvin); color: #fff; }
+#who [data-who="anthony"][aria-pressed="true"] { background: var(--anthony); color: #fff; }
+.hint { font-size: 12.5px; color: var(--ink-3); margin-left: auto; }
+
+/* ---------- box score ---------- */
+
+.sheet { margin-top: 20px; }
+
+.lanehead, .day {
+  display: grid;
+  grid-template-columns: 62px minmax(0, 1fr);
+  gap: 0 14px;
+  align-items: start;
+}
+.lanes {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 14px;
+  align-items: start;
+}
+body[data-who] .lanes { grid-template-columns: minmax(0, 1fr); }
+body[data-who="alvin"] .lane[data-who="anthony"],
+body[data-who="anthony"] .lane[data-who="alvin"] { display: none; }
+
+.lanehead {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background: var(--ground);
+  padding: 6px 0 5px;
+  border-bottom: 1px solid var(--line-2);
+}
+.lanehead span {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 19px;
+  letter-spacing: 0.06em;
+}
+.lanehead span[data-who="alvin"] { color: var(--alvin); }
+.lanehead span[data-who="anthony"] { color: var(--anthony); }
+.lanehead .role {
+  font-family: var(--body);
+  font-size: 11.5px;
+  font-weight: 500;
+  letter-spacing: 0;
+  color: var(--ink-3);
+  margin-left: 6px;
+}
+
+.day {
+  padding: 12px 0;
+  border-bottom: 1px solid var(--line);
+  break-inside: avoid;
+}
+.day.weekend { background: var(--surface-2); }
+.day.today .datecell .num { color: var(--flag); }
+
+.datecell { text-align: right; padding-right: 2px; }
+.datecell .num {
+  display: block;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 40px;
+  line-height: 0.82;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+.datecell .dow { display: block; font-size: 11.5px; color: var(--ink-3); margin-top: 4px; }
+.datecell .mon {
+  display: block;
+  font-family: var(--display);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--ink-3);
+}
+
+.lane { display: flex; flex-direction: column; gap: 7px; min-width: 0; }
+
+.ev {
+  padding: 7px 10px;
+  border-left: 3px solid currentColor;
+  background: var(--surface);
+}
+.ev[data-who="alvin"] { color: var(--alvin); }
+.ev[data-who="anthony"] { color: var(--anthony); }
+.ev.tbd { border-left-style: dashed; background: none; box-shadow: inset 0 0 0 1px var(--line); }
+.ev .top {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-size: 13px;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.01em;
+}
+.ev .kind {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  color: var(--ink-3);
+  flex: none;
+}
+.ev .name { color: var(--ink); font-weight: 600; font-size: 14.5px; margin-top: 1px; }
+.ev .note { color: var(--ink-3); font-size: 11.5px; margin-top: 1px; font-variant-numeric: tabular-nums; }
+.ev.clash { box-shadow: inset 0 0 0 1.5px var(--flag); }
+.ev .clash-tag { color: var(--flag); font-weight: 700; font-size: 11px; letter-spacing: 0.02em; flex: none; }
+.ev .badge {
+  display: none;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 13px;
+  letter-spacing: 0.06em;
+}
+.rest { font-size: 12.5px; color: var(--ink-3); padding: 7px 2px; }
+
+.marker {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  margin: 0;
+  padding: 9px 0 8px 62px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12.5px;
+  color: var(--ink-2);
+  background: var(--ground);
+}
+.marker::before {
+  content: "";
+  flex: none;
+  width: 22px;
+  height: 2px;
+  background: var(--ink-2);
+  transform: translateY(-4px);
+}
+
+/* ---------- month grid ---------- */
+
+.month { margin-top: 20px; display: none; }
+body[data-view="month"] .month { display: block; }
+body[data-view="month"] .sheet { display: none; }
+
+.mgrid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 1px; background: var(--line); border: 1px solid var(--line); }
+.mgrid .dowhead {
+  background: var(--ground);
+  padding: 5px 6px;
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 14px;
+  letter-spacing: 0.06em;
+  color: var(--ink-3);
+  text-align: center;
+}
+.cell { background: var(--surface); min-height: 96px; padding: 5px 6px 7px; display: flex; flex-direction: column; gap: 3px; }
+.cell.out { background: var(--surface-2); }
+.cell.out .cnum { color: var(--ink-3); }
+.cell .cnum {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 19px;
+  line-height: 1;
+  font-variant-numeric: tabular-nums;
+}
+.cell.today .cnum { color: var(--flag); }
+.chip {
+  font-size: 10.5px;
+  line-height: 1.25;
+  padding: 2px 4px;
+  border-left: 2px solid currentColor;
+  font-variant-numeric: tabular-nums;
+}
+.chip[data-who="alvin"] { color: var(--alvin); background: var(--alvin-bg); }
+.chip[data-who="anthony"] { color: var(--anthony); background: var(--anthony-bg); }
+.chip.clash { outline: 1.5px solid var(--flag); outline-offset: -1.5px; }
+.chip b { color: inherit; font-weight: 700; }
+.chip i { font-style: normal; color: var(--ink-2); display: block; }
+
+/* ---------- legend ---------- */
+
+.legend {
+  margin-top: 26px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 22px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.legend .k { display: inline-flex; align-items: center; gap: 6px; }
+.legend .sw { width: 12px; height: 12px; flex: none; }
+.legend .sw.al { background: var(--alvin); }
+.legend .sw.an { background: var(--anthony); }
+.legend .sw.tb { border: 1px dashed var(--line-2); }
+.legend .sw.cl { border: 1.5px solid var(--flag); }
+
+/* ---------- subscribe ---------- */
+
+.subscribe {
+  margin-top: 16px;
+  padding: 13px 15px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-left: 5px solid var(--ink-3);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 6px 14px;
+  font-size: 12.5px;
+  color: var(--ink-2);
+}
+.subscribe .sub-lede {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 17px;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  flex: none;
+}
+.subscribe .sub-go {
+  color: var(--alvin);
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  flex: none;
+}
+.subscribe .sub-go:hover { color: var(--ink); }
+.subscribe .sub-go:focus-visible { outline: 2px solid var(--alvin); outline-offset: 2px; }
+.subscribe .sub-or { flex-basis: 100%; line-height: 1.6; }
+.subscribe code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11.5px;
+  color: var(--ink);
+  background: var(--surface-2);
+  padding: 2px 5px;
+  border: 1px solid var(--line);
+  user-select: all;
+  word-break: break-all;
+}
+
+/* ---------- narrow ---------- */
+
+@media (max-width: 720px) {
+  body { padding: 0 14px; padding-block: 20px 36px; }
+  .lanehead { display: none; }
+  .day { grid-template-columns: 46px minmax(0, 1fr); gap: 0 12px; }
+  .lanes, body[data-who] .lanes { grid-template-columns: minmax(0, 1fr); gap: 7px; }
+  .lane:has(> .rest) { display: none; }
+  .datecell .num { font-size: 30px; }
+  .ev .badge { display: inline; }
+  .rest { display: none; }
+  .marker { padding-left: 58px; }
+  .nextup .whn { margin-left: 0; flex-basis: 100%; }
+  .mgrid { font-size: 11px; }
+  .cell { min-height: 62px; }
+  .chip i { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; animation: none !important; }
+}
+
+/* ---------- print ---------- */
+
+@page { size: A4 landscape; margin: 9mm; }
+
+@media print {
+  :root {
+    --ground: #fff; --surface: #fff; --surface-2: #F2F4F5;
+    --ink: #000; --ink-2: #444; --ink-3: #666;
+    --line: #BBB; --line-2: #888;
+    --alvin: #0C5670; --anthony: #8C3A0C; --flag: #A8221A;
+  }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  body { padding: 0; font-size: 10px; line-height: 1.34; background: #fff; }
+  .wrap { max-width: none; }
+  .controls, .hint, .month, .nextup, .lanehead, .rest, .ev .note,
+  .subscribe { display: none !important; }
+  .sheet { display: block !important; margin-top: 6px; }
+  .masthead { padding-bottom: 6px; border-bottom-width: 1.5px; }
+  .masthead h1 { font-size: 26px; }
+  .masthead .season { font-size: 9.5px; }
+  #days { columns: 2; column-gap: 7mm; column-fill: balance; }
+  .day { grid-template-columns: 38px minmax(0, 1fr) !important; gap: 0 7px; padding: 3.5px 0; }
+  .lanes, body[data-who] .lanes {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) !important;
+    gap: 7px;
+  }
+  .lane[data-who] { display: flex !important; gap: 3px; }
+  .datecell .mon { font-size: 8.5px; letter-spacing: 0.06em; }
+  .datecell .num { font-size: 21px; }
+  .datecell .dow { font-size: 8.5px; margin-top: 1px; }
+  .ev { padding: 2.5px 5px; border-left-width: 2.5px; }
+  .ev .top { font-size: 9.5px; gap: 5px; }
+  .ev .kind { font-size: 8px; }
+  .ev .name { font-size: 10.5px; }
+  .ev .clash-tag { font-size: 8px; }
+  .ev .badge { display: inline; font-size: 9.5px; }
+  .marker { padding: 4px 0 4px 45px; font-size: 9.5px; }
+  .marker::before { width: 16px; transform: translateY(-3px); }
+  .legend { margin-top: 6px; padding-top: 5px; font-size: 9.5px; gap: 4px 15px; }
+  .legend .sw { width: 9px; height: 9px; }
+}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header class="masthead">
+    <h1>Alvin <span class="amp">&amp;</span> Anthony<br><span id="lede"></span></h1>
+    <p class="season"><b id="range"></b><br><span id="meta"></span></p>
+  </header>
+
+  <p class="nextup" id="nextup"></p>
+
+  <div class="controls">
+    <div class="seg" id="view" role="group">
+      <button type="button" data-view="agenda" aria-pressed="true"></button>
+      <button type="button" data-view="month" aria-pressed="false"></button>
+    </div>
+    <div class="seg" id="who" role="group">
+      <button type="button" data-who="all" aria-pressed="true"></button>
+      <button type="button" data-who="alvin" aria-pressed="false">Alvin</button>
+      <button type="button" data-who="anthony" aria-pressed="false">Anthony</button>
+    </div>
+    <div class="seg" id="lang" role="group" aria-label="Language">
+      <button type="button" data-lang="zh" aria-pressed="true">中文</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+    <span class="hint" id="hint"></span>
+  </div>
+
+  <section class="sheet" id="sheet">
+    <div class="lanehead" aria-hidden="true">
+      <span></span>
+      <div class="lanes">
+        <span data-who="alvin">ALVIN<span class="role"></span></span>
+        <span data-who="anthony">ANTHONY<span class="role"></span></span>
+      </div>
+    </div>
+    <div id="days"></div>
+  </section>
+
+  <section class="month" id="monthview">
+    <div class="mgrid" id="mgrid"></div>
+  </section>
+
+  <div class="legend" id="legend">
+    <span class="k"><i class="sw al"></i><span></span></span>
+    <span class="k"><i class="sw an"></i><span></span></span>
+    <span class="k"><i class="sw tb"></i><span></span></span>
+    <span class="k"><i class="sw cl"></i><span></span></span>
+    <span class="k"><span></span></span>
+  </div>
+
+  <p class="subscribe" id="subscribe">
+    <span class="sub-lede" id="sub-lede"></span>
+    <a class="sub-go" id="sub-go" href="#"></a>
+    <span class="sub-or"><span id="sub-or"></span> <code id="sub-url"></code></span>
+  </p>
+</div>
+
+<script src="events.js"></script>
+<script>
+(function () {
+  var MON = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+
+  var I18N = {
+    zh: {
+      htmlLang: 'zh-CN',
+      lede: '假期日程',
+      range: '2026 年 9 月 14 日 – 10 月 11 日',
+      meta: '学校假期 9/19 – 10/4 · 10/5 开学 · 时区 Australia/Melbourne',
+      agenda: '日程', month: '月历', both: '两人',
+      viewLabel: '视图', whoLabel: '只看一个人',
+      sheetLabel: '按日程', monthLabel: '月历',
+      hint: 'Cmd + P 打印成 A4 横版一页',
+      nextup: '下一场', done: '假期结束', doneNote: '日程上的安排都过去了',
+      free: '无安排', overlap: '时间重叠', tbd: '待定',
+      today: '今天', tomorrow: '明天',
+      inDays: function (n) { return n + ' 天后'; },
+      whom: function (k) { return k.name + '（' + k.zh + '）'; },
+      dow: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+      dowCell: ['周日', '周一', '周二', '周三', '周四', '周五', '周六'],
+      dowShort: ['日', '一', '二', '三', '四', '五', '六'],
+      legend: ['Alvin（哥哥）', 'Anthony（弟弟）', '虚线 = 时间待定',
+               '红框 = 同一人时间重叠', '红色日期 = 今天'],
+      subLede: '订阅到手机日历',
+      subGo: 'iPhone / Mac 点这里订阅',
+      subOr: 'Android 或 Google 日历：用「从网址添加日历」粘贴 —',
+    },
+    en: {
+      htmlLang: 'en',
+      lede: 'Holiday Schedule',
+      range: '14 Sep – 11 Oct 2026',
+      meta: 'School holidays 19 Sep – 4 Oct · Term 4 starts 5 Oct · Australia/Melbourne',
+      agenda: 'Agenda', month: 'Month', both: 'Both',
+      viewLabel: 'View', whoLabel: 'Show one person',
+      sheetLabel: 'Schedule by day', monthLabel: 'Month grid',
+      hint: 'Cmd + P prints one A4 landscape page',
+      nextup: 'NEXT UP', done: 'All done', doneNote: 'Every listed event has passed',
+      free: 'Free', overlap: 'Overlap', tbd: 'TBC',
+      today: 'today', tomorrow: 'tomorrow',
+      inDays: function (n) { return 'in ' + n + ' days'; },
+      whom: function (k) { return k.name + ' (' + k.en + ')'; },
+      dow: ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'],
+      dowCell: ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'],
+      dowShort: ['SUN', 'MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT'],
+      legend: ['Alvin (older brother)', 'Anthony (younger brother)', 'Dashed = time to be confirmed',
+               'Red outline = same person double-booked', 'Red date = today'],
+      subLede: 'SUBSCRIBE',
+      subGo: 'Subscribe on iPhone / Mac',
+      subOr: 'Android or Google Calendar: use “From URL” and paste —',
+    },
+  };
+
+  var LANG = 'zh';
+  var L = I18N.zh;
+
+  function title(e) { return LANG === 'en' ? (e.title_en || e.title) : e.title; }
+  function note(e) { return LANG === 'en' ? (e.note_en || e.note) : e.note; }
+  function whenText(e) { return (LANG === 'en' ? (e.when_en || e.when) : e.when) || L.tbd; }
+  function kindText(e) { return (TYPES[e.type] || {})[LANG === 'en' ? 'en' : 'zh'] || ''; }
+  function markerText(m) { return LANG === 'en' ? (m.text_en || m.text) : m.text; }
+  function dateShort(dt) {
+    if (LANG !== 'en') return (dt.getMonth() + 1) + '/' + dt.getDate();
+    var m = MON[dt.getMonth()];
+    return dt.getDate() + ' ' + m.charAt(0) + m.slice(1).toLowerCase();
+  }
+
+  function d(iso) { var p = iso.split('-').map(Number); return new Date(p[0], p[1] - 1, p[2]); }
+  function iso(dt) {
+    return dt.getFullYear() + '-' + String(dt.getMonth() + 1).padStart(2, '0') + '-' +
+      String(dt.getDate()).padStart(2, '0');
+  }
+  function el(tag, cls, text) {
+    var n = document.createElement(tag);
+    if (cls) n.className = cls;
+    if (text != null) n.textContent = text;
+    return n;
+  }
+  var TODAY = iso(new Date());
+
+  ALL_EVENTS.forEach(function (a, i) {
+    if (!a.start) return;
+    ALL_EVENTS.slice(i + 1).forEach(function (b) {
+      if (b.date !== a.date || b.who !== a.who || !b.start) return;
+      if (a.start < b.end && b.start < a.end) { a._clash = true; b._clash = true; }
+    });
+  });
+
+  function evCard(e) {
+    var box = el('div', 'ev' + (e.tbd ? ' tbd' : '') + (e._clash ? ' clash' : ''));
+    box.dataset.who = e.who;
+    var top = el('div', 'top');
+    top.appendChild(el('span', 'badge', KIDS[e.who].short));
+    top.appendChild(el('span', 'clock', e.tbd ? whenText(e) : e.start + '–' + e.end));
+    if (e._clash) top.appendChild(el('span', 'clash-tag', L.overlap));
+    top.appendChild(el('span', 'kind', kindText(e)));
+    box.appendChild(top);
+    box.appendChild(el('div', 'name', title(e)));
+    if (note(e)) box.appendChild(el('div', 'note', note(e)));
+    return box;
+  }
+
+  function renderAgenda() {
+    var host = document.getElementById('days');
+    host.textContent = '';
+    var byDate = {}, order = [];
+    ALL_EVENTS.forEach(function (e) {
+      if (!byDate[e.date]) { byDate[e.date] = []; order.push(e.date); }
+      byDate[e.date].push(e);
+    });
+    order.sort();
+
+    order.forEach(function (date) {
+      MARKERS.filter(function (m) { return m.date === date; }).forEach(function (m) {
+        host.appendChild(el('p', 'marker', markerText(m)));
+      });
+
+      var dt = d(date), dow = dt.getDay();
+      var row = el('div', 'day' + (dow === 0 || dow === 6 ? ' weekend' : '') + (date === TODAY ? ' today' : ''));
+
+      var cell = el('div', 'datecell');
+      cell.appendChild(el('span', 'mon', MON[dt.getMonth()]));
+      cell.appendChild(el('span', 'num', String(dt.getDate())));
+      cell.appendChild(el('span', 'dow', L.dowCell[dow]));
+      row.appendChild(cell);
+
+      var lanes = el('div', 'lanes');
+      ['alvin', 'anthony'].forEach(function (who) {
+        var lane = el('div', 'lane');
+        lane.dataset.who = who;
+        var mine = byDate[date].filter(function (e) { return e.who === who; });
+        if (mine.length) mine.forEach(function (e) { lane.appendChild(evCard(e)); });
+        else lane.appendChild(el('div', 'rest', L.free));
+        lanes.appendChild(lane);
+      });
+      row.appendChild(lanes);
+
+      host.appendChild(row);
+    });
+  }
+
+  function renderMonth() {
+    var grid = document.getElementById('mgrid');
+    grid.textContent = '';
+    L.dowShort.forEach(function (n) { grid.appendChild(el('div', 'dowhead', n)); });
+
+    var from = d(RANGE.start), to = d(RANGE.end);
+    var first = new Date(from); first.setDate(first.getDate() - first.getDay());
+    var last = new Date(to); last.setDate(last.getDate() + (6 - last.getDay()));
+
+    var byDate = {};
+    ALL_EVENTS.forEach(function (e) { (byDate[e.date] = byDate[e.date] || []).push(e); });
+
+    for (var cur = new Date(first); cur <= last; cur.setDate(cur.getDate() + 1)) {
+      var key = iso(cur);
+      var outside = cur < from || cur > to;
+      var cell = el('div', 'cell' + (outside ? ' out' : '') + (key === TODAY ? ' today' : ''));
+      cell.appendChild(el('div', 'cnum', String(cur.getDate())));
+      (byDate[key] || []).forEach(function (e) {
+        var chip = el('div', 'chip' + (e._clash ? ' clash' : ''));
+        chip.dataset.who = e.who;
+        chip.appendChild(el('b', null, (e.tbd ? L.tbd : e.start) + ' ' + KIDS[e.who].short));
+        chip.appendChild(el('i', null, title(e)));
+        cell.appendChild(chip);
+      });
+      grid.appendChild(cell);
+    }
+  }
+
+  function renderNextUp() {
+    var box = document.getElementById('nextup');
+    box.textContent = '';
+    var now = new Date();
+    var next = null;
+    for (var i = 0; i < ALL_EVENTS.length; i++) {
+      var e = ALL_EVENTS[i];
+      var when = d(e.date);
+      if (e.start) {
+        var hm = e.start.split(':').map(Number);
+        when.setHours(hm[0], hm[1]);
+      } else {
+        when.setHours(23, 59);
+      }
+      if (when >= now) { next = { e: e, at: when }; break; }
+    }
+    if (!next) {
+      box.appendChild(el('span', 'lede', L.done));
+      box.appendChild(el('span', 'what', L.doneNote));
+      return;
+    }
+    var e2 = next.e, dt = d(e2.date);
+    box.appendChild(el('span', 'lede', L.nextup));
+    var what = el('span', 'what');
+    what.appendChild(el('b', 'whom', L.whom(KIDS[e2.who])));
+    what.appendChild(document.createTextNode(' · ' + title(e2)));
+    box.appendChild(what);
+    var days = Math.round((d(e2.date) - d(TODAY)) / 86400000);
+    var rel = days === 0 ? L.today : days === 1 ? L.tomorrow : L.inDays(days);
+    box.appendChild(el('span', 'whn',
+      dateShort(dt) + ' ' + L.dow[dt.getDay()] + ' ' +
+      (e2.tbd ? whenText(e2) : e2.start) + ' · ' + rel));
+  }
+
+  function renderChrome() {
+    document.documentElement.lang = L.htmlLang;
+    document.getElementById('lede').textContent = L.lede;
+    document.getElementById('range').textContent = L.range;
+    document.getElementById('meta').textContent = L.meta;
+    document.getElementById('hint').textContent = L.hint;
+
+    var view = document.getElementById('view');
+    view.setAttribute('aria-label', L.viewLabel);
+    view.children[0].textContent = L.agenda;
+    view.children[1].textContent = L.month;
+
+    var who = document.getElementById('who');
+    who.setAttribute('aria-label', L.whoLabel);
+    who.children[0].textContent = L.both;
+
+    document.getElementById('sheet').setAttribute('aria-label', L.sheetLabel);
+    document.getElementById('monthview').setAttribute('aria-label', L.monthLabel);
+
+    document.querySelectorAll('.lanehead .role').forEach(function (n, i) {
+      n.textContent = i === 0 ? KIDS.alvin[LANG] : KIDS.anthony[LANG];
+    });
+
+    document.querySelectorAll('#legend .k > span').forEach(function (n, i) {
+      n.textContent = L.legend[i];
+    });
+
+    var httpsUrl = SITE + '/' + ICS;
+    document.getElementById('sub-lede').textContent = L.subLede;
+    document.getElementById('sub-or').textContent = L.subOr;
+    document.getElementById('sub-url').textContent = httpsUrl;
+    var go = document.getElementById('sub-go');
+    go.textContent = L.subGo;
+    go.href = httpsUrl.replace(/^https:/, 'webcal:');
+  }
+
+  function setLang(next) {
+    LANG = I18N[next] ? next : 'zh';
+    L = I18N[LANG];
+    document.querySelectorAll('#lang button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.lang === LANG));
+    });
+    try { localStorage.setItem('hc-lang', LANG); } catch (err) { /* private window */ }
+    renderChrome();
+    renderNextUp();
+    renderAgenda();
+    renderMonth();
+  }
+
+  document.getElementById('lang').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button');
+    if (b) setLang(b.dataset.lang);
+  });
+
+  document.getElementById('view').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    document.body.dataset.view = b.dataset.view;
+    this.querySelectorAll('button').forEach(function (x) {
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+  });
+
+  document.getElementById('who').addEventListener('click', function (ev) {
+    var b = ev.target.closest('button'); if (!b) return;
+    if (b.dataset.who === 'all') delete document.body.dataset.who;
+    else document.body.dataset.who = b.dataset.who;
+    this.querySelectorAll('button').forEach(function (x) {
+      x.setAttribute('aria-pressed', String(x === b));
+    });
+  });
+
+  document.body.dataset.view = 'agenda';
+
+  var saved = null;
+  try { saved = localStorage.getItem('hc-lang'); } catch (err) { /* private window */ }
+  setLang(saved || 'zh');
+})();
+</script>
+
+</body>
+</html>
