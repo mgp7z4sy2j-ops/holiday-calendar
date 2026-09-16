@@ -53,18 +53,18 @@ DESCRIPTION:Anthony · 锦标赛 ① 第 2 场 Tournament 1 · Game 2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-19-alvin-ed0afde9@holiday-calendar
+UID:2026-09-19-alvin-fbcfaead@holiday-calendar
 DTSTAMP:20260914T000000Z
-SUMMARY:Alvin · Grand Final 两场 Grand Final · 2 games
+SUMMARY:Alvin · Grand Final
 DESCRIPTION:比赛 Game · Alvin（哥哥 / older）
 CATEGORIES:比赛 Game
 LOCATION:MSAC
 DTSTART;TZID=Australia/Melbourne:20260919T150000
-DTEND;TZID=Australia/Melbourne:20260919T170000
+DTEND;TZID=Australia/Melbourne:20260919T160000
 BEGIN:VALARM
 ACTION:DISPLAY
 TRIGGER:-PT30M
-DESCRIPTION:Alvin · Grand Final 两场 Grand Final · 2 games
+DESCRIPTION:Alvin · Grand Final
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT

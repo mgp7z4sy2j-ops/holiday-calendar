@@ -45,8 +45,8 @@ const EVENTS = [
   { date: '2026-09-18', who: 'anthony', start: '18:30', end: '19:30', type: 'game',
     title: '锦标赛 ① 第 1 场', title_en: 'Tournament 1 · Game 1' },
 
-  { date: '2026-09-19', who: 'alvin', start: '15:00', end: '17:00', type: 'game',
-    title: 'Grand Final 两场', title_en: 'Grand Final · 2 games', venue: 'MSAC' },
+  { date: '2026-09-19', who: 'alvin', start: '15:00', end: '16:00', type: 'game',
+    title: 'Grand Final', title_en: 'Grand Final', venue: 'MSAC' },
   { date: '2026-09-19', who: 'anthony', start: '12:40', end: '13:40', type: 'game',
     title: '锦标赛 ① 第 2 场', title_en: 'Tournament 1 · Game 2' },
   { date: '2026-09-19', who: 'anthony', start: '15:10', end: '16:10', type: 'game',
