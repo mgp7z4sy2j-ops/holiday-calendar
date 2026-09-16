@@ -10,6 +10,27 @@ const { TIMEZONE, KIDS, TYPES, ALL_EVENTS } = new Function(
 
 const bi = (zh, en) => (!en || en === zh ? zh : `${zh} ${en}`);
 
+// UID 是订阅方认定的事件身份，必须与数组顺序、与时间都无关：
+// 按"当天第几条"编号的话，插入一条事件会让后面所有事件的 UID 漂移，
+// 订阅方会把同一个活动删掉重建。这里只用 日期 + 人 + 标题 推导，
+// 所以补一个待定时间是"更新"而不是"换一个事件"。
+function fnv1a(s) {
+  let h = 0x811c9dc5;
+  for (let i = 0; i < s.length; i++) {
+    h ^= s.charCodeAt(i);
+    h = Math.imul(h, 0x01000193) >>> 0;
+  }
+  return h.toString(16).padStart(8, '0');
+}
+
+const uidSeen = new Map();
+function uidFor(e) {
+  const base = `${e.date}-${e.who}-${fnv1a(e.title)}`;
+  const n = (uidSeen.get(base) || 0) + 1;
+  uidSeen.set(base, n);
+  return `${n === 1 ? base : `${base}-${n}`}@holiday-calendar`;
+}
+
 const STAMP = '20260914T000000Z';
 
 const VTIMEZONE = [
@@ -50,7 +71,7 @@ function fold(line) {
   while (cut < bytes.length) {
     let take = Math.min(cut === 0 ? 73 : 72, bytes.length - cut);
     while (take > 1 && (bytes[cut + take] & 0xc0) === 0x80) take--;
-    out.push((cut === 0 ? '' : ' ') + bytes.slice(cut, cut + take).toString('utf8'));
+    out.push((cut === 0 ? '' : ' ') + bytes.subarray(cut, cut + take).toString('utf8'));
     cut += take;
   }
   return out.join('\r\n');
@@ -69,12 +90,9 @@ const lines = [
   ...VTIMEZONE,
 ];
 
-const seen = new Map();
 const rows = [];
 
 for (const e of ALL_EVENTS) {
-  const n = (seen.get(e.date) || 0) + 1;
-  seen.set(e.date, n);
   const kid = KIDS[e.who];
   const t = TYPES[e.type] || {};
   const kind = bi(t.zh || '', t.en);
@@ -83,7 +101,7 @@ for (const e of ALL_EVENTS) {
 
   const ev = [
     'BEGIN:VEVENT',
-    `UID:${e.date}-${e.who}-${n}@holiday-calendar`,
+    `UID:${uidFor(e)}`,
     `DTSTAMP:${STAMP}`,
     `SUMMARY:${esc(summary)}`,
     `DESCRIPTION:${esc(
@@ -93,6 +111,8 @@ for (const e of ALL_EVENTS) {
     )}`,
     `CATEGORIES:${esc(kind)}`,
   ];
+
+  if (e.venue) ev.push(`LOCATION:${esc(e.venue)}`);
 
   if (e.tbd) {
     ev.push(`DTSTART;VALUE=DATE:${compact(e.date)}`, `DTEND;VALUE=DATE:${nextDay(e.date)}`);
@@ -112,7 +132,8 @@ for (const e of ALL_EVENTS) {
 
   rows.push(
     `${e.date}  ${DOWS(e.date)}  ${kid.short}  ` +
-    `${(e.tbd ? '待定'.padEnd(11) : `${e.start}-${e.end}`).padEnd(13)}${kind}  ${e.title}`
+    `${(e.tbd ? '待定'.padEnd(11) : `${e.start}-${e.end}`).padEnd(13)}${kind}  ${e.title}` +
+    (e.venue ? `  @${e.venue}` : '')
   );
 }
 

@@ -25,7 +25,7 @@ TZNAME:AEDT
 END:DAYLIGHT
 END:VTIMEZONE
 BEGIN:VEVENT
-UID:2026-09-18-anthony-1@holiday-calendar
+UID:2026-09-18-anthony-0423476a@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ① 第 1 场 Tournament 1 · Game 1
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -39,7 +39,7 @@ DESCRIPTION:Anthony · 锦标赛 ① 第 1 场 Tournament 1 · Game 1
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-19-anthony-1@holiday-calendar
+UID:2026-09-19-anthony-cd0cfa2f@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ① 第 2 场 Tournament 1 · Game 2
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -53,7 +53,22 @@ DESCRIPTION:Anthony · 锦标赛 ① 第 2 场 Tournament 1 · Game 2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-19-anthony-2@holiday-calendar
+UID:2026-09-19-alvin-ed0afde9@holiday-calendar
+DTSTAMP:20260914T000000Z
+SUMMARY:Alvin · Grand Final 两场 Grand Final · 2 games
+DESCRIPTION:比赛 Game · Alvin（哥哥 / older）
+CATEGORIES:比赛 Game
+LOCATION:MSAC
+DTSTART;TZID=Australia/Melbourne:20260919T150000
+DTEND;TZID=Australia/Melbourne:20260919T170000
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Alvin · Grand Final 两场 Grand Final · 2 games
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-19-anthony-5e163d54@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ① 第 3 场 Tournament 1 · Game 3
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -67,18 +82,7 @@ DESCRIPTION:Anthony · 锦标赛 ① 第 3 场 Tournament 1 · Game 3
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-19-alvin-3@holiday-calendar
-DTSTAMP:20260914T000000Z
-SUMMARY:Alvin · Grand Final 两场 Grand Final · 2 games （待定 TBC
- ）
-DESCRIPTION:比赛 Game · Alvin（哥哥 / older）\n时间待定 Time T
- BC
-CATEGORIES:比赛 Game
-DTSTART;VALUE=DATE:20260919
-DTEND;VALUE=DATE:20260920
-END:VEVENT
-BEGIN:VEVENT
-UID:2026-09-20-anthony-1@holiday-calendar
+UID:2026-09-20-anthony-b8305099@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ① 第 4 场 Tournament 1 · Game 4
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -92,7 +96,7 @@ DESCRIPTION:Anthony · 锦标赛 ① 第 4 场 Tournament 1 · Game 4
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-20-anthony-2@holiday-calendar
+UID:2026-09-20-anthony-b1351c89@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ① 决赛（若晋级） Tournament 1 · Fi
  nal (if through) （待定 TBC）
@@ -103,7 +107,7 @@ DTSTART;VALUE=DATE:20260920
 DTEND;VALUE=DATE:20260921
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-21-alvin-1@holiday-calendar
+UID:2026-09-21-alvin-ca0c0b55@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · AI 专项训练 ① AI Training 1
 DESCRIPTION:AI 课 AI · Alvin（哥哥 / older）\n北京时间 9:00–1
@@ -118,7 +122,7 @@ DESCRIPTION:Alvin · AI 专项训练 ① AI Training 1
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-21-anthony-2@holiday-calendar
+UID:2026-09-21-anthony-ca0c0b55@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · AI 专项训练 ① AI Training 1
 DESCRIPTION:AI 课 AI · Anthony（弟弟 / younger）\n北京时间 9:00
@@ -133,7 +137,35 @@ DESCRIPTION:Anthony · AI 专项训练 ① AI Training 1
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-22-alvin-1@holiday-calendar
+UID:2026-09-22-alvin-47ada4b0@holiday-calendar
+DTSTAMP:20260914T000000Z
+SUMMARY:Alvin · Kai 教练私教课 Private session · Coach Kai
+DESCRIPTION:训练 Training · Alvin（哥哥 / older）
+CATEGORIES:训练 Training
+DTSTART;TZID=Australia/Melbourne:20260922T060000
+DTEND;TZID=Australia/Melbourne:20260922T073000
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Alvin · Kai 教练私教课 Private session · Coach Kai
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-22-anthony-47ada4b0@holiday-calendar
+DTSTAMP:20260914T000000Z
+SUMMARY:Anthony · Kai 教练私教课 Private session · Coach Kai
+DESCRIPTION:训练 Training · Anthony（弟弟 / younger）
+CATEGORIES:训练 Training
+DTSTART;TZID=Australia/Melbourne:20260922T060000
+DTEND;TZID=Australia/Melbourne:20260922T073000
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Anthony · Kai 教练私教课 Private session · Coach Kai
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-22-alvin-844300be@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · Tigers Camp
 DESCRIPTION:营队 Camp · Alvin（哥哥 / older）
@@ -147,7 +179,7 @@ DESCRIPTION:Alvin · Tigers Camp
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-22-anthony-2@holiday-calendar
+UID:2026-09-22-anthony-844300be@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · Tigers Camp
 DESCRIPTION:营队 Camp · Anthony（弟弟 / younger）
@@ -161,7 +193,35 @@ DESCRIPTION:Anthony · Tigers Camp
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-23-alvin-1@holiday-calendar
+UID:2026-09-23-alvin-47ada4b0@holiday-calendar
+DTSTAMP:20260914T000000Z
+SUMMARY:Alvin · Kai 教练私教课 Private session · Coach Kai
+DESCRIPTION:训练 Training · Alvin（哥哥 / older）
+CATEGORIES:训练 Training
+DTSTART;TZID=Australia/Melbourne:20260923T070000
+DTEND;TZID=Australia/Melbourne:20260923T083000
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Alvin · Kai 教练私教课 Private session · Coach Kai
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-23-anthony-47ada4b0@holiday-calendar
+DTSTAMP:20260914T000000Z
+SUMMARY:Anthony · Kai 教练私教课 Private session · Coach Kai
+DESCRIPTION:训练 Training · Anthony（弟弟 / younger）
+CATEGORIES:训练 Training
+DTSTART;TZID=Australia/Melbourne:20260923T070000
+DTEND;TZID=Australia/Melbourne:20260923T083000
+BEGIN:VALARM
+ACTION:DISPLAY
+TRIGGER:-PT30M
+DESCRIPTION:Anthony · Kai 教练私教课 Private session · Coach Kai
+END:VALARM
+END:VEVENT
+BEGIN:VEVENT
+UID:2026-09-23-alvin-e190c67d@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · 牙医 Dentist
 DESCRIPTION:就医 Appointment · Alvin（哥哥 / older）
@@ -175,7 +235,7 @@ DESCRIPTION:Alvin · 牙医 Dentist
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-23-alvin-2@holiday-calendar
+UID:2026-09-23-alvin-c90c09c2@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · AI 专项训练 ② AI Training 2
 DESCRIPTION:AI 课 AI · Alvin（哥哥 / older）\n北京时间 9:00–1
@@ -190,7 +250,7 @@ DESCRIPTION:Alvin · AI 专项训练 ② AI Training 2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-23-anthony-3@holiday-calendar
+UID:2026-09-23-anthony-c90c09c2@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · AI 专项训练 ② AI Training 2
 DESCRIPTION:AI 课 AI · Anthony（弟弟 / younger）\n北京时间 9:00
@@ -205,7 +265,7 @@ DESCRIPTION:Anthony · AI 专项训练 ② AI Training 2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-24-alvin-1@holiday-calendar
+UID:2026-09-24-alvin-844300be@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · Tigers Camp
 DESCRIPTION:营队 Camp · Alvin（哥哥 / older）
@@ -219,7 +279,7 @@ DESCRIPTION:Alvin · Tigers Camp
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-24-anthony-2@holiday-calendar
+UID:2026-09-24-anthony-844300be@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · Tigers Camp
 DESCRIPTION:营队 Camp · Anthony（弟弟 / younger）
@@ -233,7 +293,7 @@ DESCRIPTION:Anthony · Tigers Camp
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-25-anthony-1@holiday-calendar
+UID:2026-09-25-anthony-7e0633e5@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ② 第 1 场 Tournament 2 · Game 1
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -247,7 +307,7 @@ DESCRIPTION:Anthony · 锦标赛 ② 第 1 场 Tournament 2 · Game 1
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-25-anthony-2@holiday-calendar
+UID:2026-09-25-anthony-6975bcb4@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ② 第 2 场 Tournament 2 · Game 2
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -261,7 +321,7 @@ DESCRIPTION:Anthony · 锦标赛 ② 第 2 场 Tournament 2 · Game 2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-25-anthony-3@holiday-calendar
+UID:2026-09-25-anthony-586bb00f@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ② 第 3 场 Tournament 2 · Game 3
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -275,7 +335,7 @@ DESCRIPTION:Anthony · 锦标赛 ② 第 3 场 Tournament 2 · Game 3
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-26-anthony-1@holiday-calendar
+UID:2026-09-26-anthony-d42040de@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 锦标赛 ② 第 4 场 Tournament 2 · Game 4
 DESCRIPTION:比赛 Game · Anthony（弟弟 / younger）
@@ -289,7 +349,7 @@ DESCRIPTION:Anthony · 锦标赛 ② 第 4 场 Tournament 2 · Game 4
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-27-alvin-1@holiday-calendar
+UID:2026-09-27-alvin-c80c082f@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · AI 专项训练 ③ AI Training 3
 DESCRIPTION:AI 课 AI · Alvin（哥哥 / older）\n北京时间 9:00–1
@@ -304,7 +364,7 @@ DESCRIPTION:Alvin · AI 专项训练 ③ AI Training 3
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-27-anthony-2@holiday-calendar
+UID:2026-09-27-anthony-c80c082f@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · AI 专项训练 ③ AI Training 3
 DESCRIPTION:AI 课 AI · Anthony（弟弟 / younger）\n北京时间 9:00
@@ -319,7 +379,7 @@ DESCRIPTION:Anthony · AI 专项训练 ③ AI Training 3
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-28-anthony-1@holiday-calendar
+UID:2026-09-28-anthony-a4b4441b@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 篮球假期班 Basketball Holiday Camp
 DESCRIPTION:营队 Camp · Anthony（弟弟 / younger）
@@ -333,7 +393,7 @@ DESCRIPTION:Anthony · 篮球假期班 Basketball Holiday Camp
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-28-alvin-2@holiday-calendar
+UID:2026-09-28-alvin-7b8e42ec@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · 英语假期班 English Holiday Class
 DESCRIPTION:课程 Class · Alvin（哥哥 / older）
@@ -347,7 +407,7 @@ DESCRIPTION:Alvin · 英语假期班 English Holiday Class
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-29-anthony-1@holiday-calendar
+UID:2026-09-29-anthony-a4b4441b@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 篮球假期班 Basketball Holiday Camp
 DESCRIPTION:营队 Camp · Anthony（弟弟 / younger）
@@ -361,7 +421,7 @@ DESCRIPTION:Anthony · 篮球假期班 Basketball Holiday Camp
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-29-alvin-2@holiday-calendar
+UID:2026-09-29-alvin-7b8e42ec@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · 英语假期班 English Holiday Class
 DESCRIPTION:课程 Class · Alvin（哥哥 / older）
@@ -375,7 +435,7 @@ DESCRIPTION:Alvin · 英语假期班 English Holiday Class
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-30-anthony-1@holiday-calendar
+UID:2026-09-30-anthony-a4b4441b@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 篮球假期班 Basketball Holiday Camp
 DESCRIPTION:营队 Camp · Anthony（弟弟 / younger）
@@ -389,7 +449,7 @@ DESCRIPTION:Anthony · 篮球假期班 Basketball Holiday Camp
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-09-30-alvin-2@holiday-calendar
+UID:2026-09-30-alvin-7b8e42ec@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · 英语假期班 English Holiday Class
 DESCRIPTION:课程 Class · Alvin（哥哥 / older）
@@ -403,7 +463,7 @@ DESCRIPTION:Alvin · 英语假期班 English Holiday Class
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-01-alvin-1@holiday-calendar
+UID:2026-10-01-alvin-7b8e42ec@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · 英语假期班 English Holiday Class
 DESCRIPTION:课程 Class · Alvin（哥哥 / older）
@@ -417,7 +477,7 @@ DESCRIPTION:Alvin · 英语假期班 English Holiday Class
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-02-anthony-1@holiday-calendar
+UID:2026-10-02-anthony-094cf2e1@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · 个人训练 Individual Training
 DESCRIPTION:训练 Training · Anthony（弟弟 / younger）
@@ -431,7 +491,7 @@ DESCRIPTION:Anthony · 个人训练 Individual Training
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-02-anthony-2@holiday-calendar
+UID:2026-10-02-anthony-7188fa69@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · Tigers Tryout 第 1 轮 Tigers Tryout · Round 1
 DESCRIPTION:选拔 Tryout · Anthony（弟弟 / younger）
@@ -445,7 +505,7 @@ DESCRIPTION:Anthony · Tigers Tryout 第 1 轮 Tigers Tryout · Round 1
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-02-alvin-3@holiday-calendar
+UID:2026-10-02-alvin-7188fa69@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · Tigers Tryout 第 1 轮 Tigers Tryout · Round 1
 DESCRIPTION:选拔 Tryout · Alvin（哥哥 / older）
@@ -459,7 +519,7 @@ DESCRIPTION:Alvin · Tigers Tryout 第 1 轮 Tigers Tryout · Round 1
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-03-alvin-1@holiday-calendar
+UID:2026-10-03-alvin-c70c069c@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · AI 专项训练 ④ AI Training 4
 DESCRIPTION:AI 课 AI · Alvin（哥哥 / older）\n北京时间 9:00–1
@@ -474,7 +534,7 @@ DESCRIPTION:Alvin · AI 专项训练 ④ AI Training 4
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-03-anthony-2@holiday-calendar
+UID:2026-10-03-anthony-c70c069c@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · AI 专项训练 ④ AI Training 4
 DESCRIPTION:AI 课 AI · Anthony（弟弟 / younger）\n北京时间 9:00
@@ -489,7 +549,7 @@ DESCRIPTION:Anthony · AI 专项训练 ④ AI Training 4
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-03-alvin-3@holiday-calendar
+UID:2026-10-03-alvin-a1d40697@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · Alpha Wolf 团建 Alpha Wolf Team Event （待定 TBC）
 DESCRIPTION:团建 Team · Alvin（哥哥 / older）\n下午 + 晚上，
@@ -499,7 +559,7 @@ DTSTART;VALUE=DATE:20261003
 DTEND;VALUE=DATE:20261004
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-04-anthony-1@holiday-calendar
+UID:2026-10-04-anthony-bbf16bd8@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · Tigers Tryout 第 2 轮 Tigers Tryout · Round 2
 DESCRIPTION:选拔 Tryout · Anthony（弟弟 / younger）
@@ -513,7 +573,7 @@ DESCRIPTION:Anthony · Tigers Tryout 第 2 轮 Tigers Tryout · Round 2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-04-alvin-2@holiday-calendar
+UID:2026-10-04-alvin-bbf16bd8@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Alvin · Tigers Tryout 第 2 轮 Tigers Tryout · Round 2
 DESCRIPTION:选拔 Tryout · Alvin（哥哥 / older）
@@ -527,7 +587,7 @@ DESCRIPTION:Alvin · Tigers Tryout 第 2 轮 Tigers Tryout · Round 2
 END:VALARM
 END:VEVENT
 BEGIN:VEVENT
-UID:2026-10-04-anthony-3@holiday-calendar
+UID:2026-10-04-anthony-a1d40697@holiday-calendar
 DTSTAMP:20260914T000000Z
 SUMMARY:Anthony · Alpha Wolf 团建 Alpha Wolf Team Event （待定 TBC
  ）

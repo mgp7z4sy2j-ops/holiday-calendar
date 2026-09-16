@@ -267,6 +267,17 @@ body[data-who="anthony"] .lane[data-who="alvin"] { display: none; }
 }
 .ev .name { color: var(--ink); font-weight: 600; font-size: 14.5px; margin-top: 1px; }
 .ev .note { color: var(--ink-3); font-size: 11.5px; margin-top: 1px; font-variant-numeric: tabular-nums; }
+.ev .venue { color: var(--ink-2); font-size: 12px; font-weight: 600; margin-top: 2px; }
+.ev .venue::before {
+  content: "";
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  margin-right: 5px;
+  border-radius: 50%;
+  background: currentColor;
+  vertical-align: 0.15em;
+}
 .ev.clash { box-shadow: inset 0 0 0 1.5px var(--flag); }
 .ev .clash-tag { color: var(--flag); font-weight: 700; font-size: 11px; letter-spacing: 0.02em; flex: none; }
 .ev .badge {
@@ -458,6 +469,8 @@ body[data-view="month"] .sheet { display: none; }
   .ev .top { font-size: 9.5px; gap: 5px; }
   .ev .kind { font-size: 8px; }
   .ev .name { font-size: 10.5px; }
+  .ev .venue { font-size: 9.5px; margin-top: 1px; }
+  .ev .venue::before { width: 4px; height: 4px; margin-right: 4px; }
   .ev .clash-tag { font-size: 8px; }
   .ev .badge { display: inline; font-size: 9.5px; }
   .marker { padding: 4px 0 4px 45px; font-size: 9.5px; }
@@ -623,6 +636,7 @@ body[data-view="month"] .sheet { display: none; }
     top.appendChild(el('span', 'kind', kindText(e)));
     box.appendChild(top);
     box.appendChild(el('div', 'name', title(e)));
+    if (e.venue) box.appendChild(el('div', 'venue', e.venue));
     if (note(e)) box.appendChild(el('div', 'note', note(e)));
     return box;
   }

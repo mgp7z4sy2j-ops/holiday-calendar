@@ -32,10 +32,11 @@ git push                 # GitHub Pages 约 1 分钟后生效
 
 ```js
 { date: '2026-10-05', who: 'alvin', start: '16:00', end: '17:00', type: 'training',
-  title: '投篮训练', title_en: 'Shooting Practice' },
+  title: '投篮训练', title_en: 'Shooting Practice', venue: 'MSAC' },
 ```
 
 `who` 是 `alvin` 或 `anthony`。`type` 见 `events.js` 里的 `TYPES`（已备好 阅读 / 体能 / 投篮 / 力量）。
+`venue` 可选，会显示在卡片上并写进 ics 的 `LOCATION`（手机上能点开导航）。
 同一个人时间重叠会自动在页面上标红框，不用自己核对。
 
 ### 加重复事件
@@ -59,7 +60,10 @@ git push                 # GitHub Pages 约 1 分钟后生效
 { date: '2026-10-03', who: 'alvin', start: '14:00', end: '20:00', ... }
 ```
 
-目前还有 4 个待定项：9/19 Alvin 的 Grand Final、9/20 Anthony 的决赛（要等 9/19 是否晋级）、10/3 和 10/4 的 Alpha Wolf 团建。
+目前还有 3 个待定项：9/20 Anthony 的决赛（要等 9/19 是否晋级）、10/3 和 10/4 的 Alpha Wolf 团建。
+
+补时间**不会**让订阅方把事件删掉重建 —— ics 的 `UID` 只由 `日期 + 人 + 标题` 推导（见 `gen-ics.mjs` 里的 `uidFor`），与数组顺序、与时间都无关，所以补时间算"更新同一个事件"。
+**反过来说，改标题会换掉事件身份。** 已经发布的事件尽量别改 `title`，要改就接受订阅方那一条被删掉重建。
 
 ## 更新 Claude Artifact 版
 
